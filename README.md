@@ -23,10 +23,14 @@ the decoders previous hidden state and the previous word.`
 
 The data set comes from http://www.manythings.org/anki/ site it containes abt. 100  of foriegn language - english translation datasets. `The datasets are tab seperated.`
 In this repo. I have used **2 datasets** 
-	1.  spanish to english 
-	2.  hindi to english 
-		for hindi to english dataset I have not applied preprocessing to the hindi text as steps used for english dont work on hindi.
-                **the constants.py file has two boolean parameters PREPROCESS_INPUT and PREPROCESS_TARGET  if set to true preprocessing is applied if set to false   preprocessing is not applied.
+	
+1.  spanish to english 
+2.  hindi to english 
+
+    for hindi to english dataset I have not applied preprocessing to the hindi text as steps used for english dont work on hindi.
+               
+	       
+	       **the constants.py file has two boolean parameters PREPROCESS_INPUT and PREPROCESS_TARGET  if set to true preprocessing is applied if set to false   preprocessing is not applied.
 		One could choose to apply preprocessing to one language keeping the other unchanged as the case with hindi-english translation just set 
 		PREPROCESS_INPUT = False (input is hindi) and PREPROCESS_TARGET = True.
 		For spanish to english other PREPROCESS_INPUT and PREPROCESS_TARGET to True
@@ -48,8 +52,11 @@ Another way is doing contraction correction where will relace it's to it is or h
 ## Configurations:
 
 It's quite simple to train on a different dataset just follow the following steps.
+
 1. move the dataset (.txt) file to the data folder 
+
 2. All model parameters are stored in the constants.py file.
+
 3. Remember to change the `PATH` parameter. It should point to your dataset file name eg. change from spa.txt (which spanish2english) to hin.txt if you are doing 
 hindi-english translations.
 
@@ -84,24 +91,20 @@ In this experiments while changing one parameter eg. number of layers all other 
 		<th> Bleu - 1 Score</th>
 		<th> Loss SCE </th>
 		<th> Training Time</th>
-		
-	</tr>
-	<tr>     
+        </tr>
+        <tr>     
 	        <td>Simple Attention</td>
 		<td>64%</td>
 		<td>0.009</td>
 		<td>270s</td>
-		
         </tr>	
-	
-	<tr>
+        <tr>
 		<td>Attention With Context</td>
 		<td>66%</td>
 		<td>0.006</td>
 		<td>300s</td>
         </tr>
-	
-	<tr>
+	 <tr>
 		<td>Additive Attention</td>
 		<td>70%</td>
 		<td>0.003</td>
