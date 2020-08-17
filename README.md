@@ -139,8 +139,21 @@ observation : Additive attention is better than other attention types.
 ![alt text](https://github.com/evilc3/All-Lang-Translator/blob/master/images/experiment_2.png)
 
 
+### 3. Experiment on different Embedding Dimensions 
+![alt text](https://github.com/evilc3/All-Lang-Translator/blob/master/images/experiment_3.png)
+
+
+### 4. Experiment on different Embedding Dimensions 
+![alt text](https://github.com/evilc3/All-Lang-Translator/blob/master/images/experiment_4.png)
 	
 	
 
+## Things to do:
+
+1. Need to implement a smarter way of preprocessing the data. 
+
+2. Create a flask app (streamlit has limited functionality)
+
+3. Implement Transformer Architecture from scratch
 
 		
