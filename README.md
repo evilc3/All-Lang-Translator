@@ -6,6 +6,11 @@
 
 ## About the problem: 
 
+
+![alt text](https://github.com/evilc3/All-Lang-Translator/blob/master/images/seq_to_seq_nmt.png)
+
+
+
 NMT or neural machine translation is a problem where we try to translate a date from one langauge to another. For this we make use of the seq-2-seq model architecture
 Here we have an encoder which takes the input language and outputs an encoded vector for each input word. This encoded output is then fed into the `decoder along with 
 the decoders previous hidden state and the previous word.` 
@@ -19,6 +24,10 @@ the decoders previous hidden state and the previous word.`
 
 3. The input and output language can be interchanged. If you have a english - 2 - spanish dataset , we can make to spanish - 2 - english no need to find new  
    data.			
+
+
+# Outputs 
+![alt text](https://github.com/evilc3/All-Lang-Translator/blob/master/images/output_samples.png)
 
 ## More about the dataset:
 
@@ -63,18 +72,26 @@ It's quite simple to train on a different dataset just follow the following step
 3. Remember to change the `PATH` parameter. It should point to your dataset file name eg. change from spa.txt (which spanish2english) to hin.txt if you are doing 
 hindi-english translations.
 
+4. `SENT_LIMIT` param limits the number of datasamples used. On my local machine With no gpu I used 300 samples. 
+
+![alt text](https://github.com/evilc3/All-Lang-Translator/blob/master/images/constants_py.png)
+
+
+
+
 ## Training the models 
 
 There are 2 options provided you can use the main.py file by running 
 ```python  python main.py```
+![alt text](https://github.com/evilc3/All-Lang-Translator/blob/master/images/terminal.png)
 
-Or 
+## Or 
 
 You can use the streamlit web app  ```streamlit run app.py```
+![alt text](https://github.com/evilc3/All-Lang-Translator/blob/master/images/stramlit_gui.png)
 
 
 # Experiments 
-
 I like performing experiments when I am learning new things few of the experiments I have performed are 
 
 1. Experiments on different Attention Mechanisms
@@ -83,8 +100,8 @@ I like performing experiments when I am learning new things few of the experimen
 4. Changing the number of Layers 
 5. Changing the type of layers ef [gru ,lstm]
 
-In this experiments while changing one parameter eg. number of layers all other parameter are kept constant
-
+**In this experiments while changing one parameter eg. number of layers all other parameter are kept constant**
+**All experiments were performed in google colab.**
 
 ### 1.  Experiments on different Attention Mechanisms trained on only 30000 samples
    	
@@ -119,6 +136,11 @@ observation : Additive attention is better than other attention types.
 
 
 ### 2. Experiment on different  Units
+![alt text](https://github.com/evilc3/All-Lang-Translator/blob/master/images/experiment_2.png)
+
+
+	
+	
 
 
 		
