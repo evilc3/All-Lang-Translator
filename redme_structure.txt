@@ -1,0 +1,92 @@
+Goal: The goal of this project is to learn about seq-2seq models using attention,experiment with different attention mechanisms and model atchitectures.
+
+Finally Create an all language translator. The Idea is to provided users with Gui based web application where users can just download data eg.
+spanish to engish translation click on the train button and there you have a nmt model. If a model is already trained users can inference it. 
+
+Talk About the problem: 
+<image of encoder - decoder>
+
+NMT or neural machine translation is a problem where we try to translate a date from one langauge to another. For this we make use of the seq-2-seq model architecture
+Here we have an encoder which takes the input language and outputs an encoded vector for each input word. This encoded output is then fed into the decoder alon with 
+the decoders previous hidden state and the previous word. 
+ 
+Note: 1. that the encoder takes in a sentence but the decoder doesn't output an sentence but the decoder output one word at a time until it reaches the </end> tag.
+          The input to the encoder is the padded input langauge sentences. The decoder takes 3 inputs the previous predicted word vector , the prevoius hidden state 
+	  and the encoders output.		
+
+      2. The input and output language can be interchanged. If you have a english - 2 - spanish dataset , we can make to spanish - 2 - english no need to find new 
+	 data.			
+
+
+More about the dataset:
+The data set comes from _ site it containes _ number  of foriegn language - english translation datasets 
+For this research I Have used 2 datasets 
+1. spanish to english 
+2. hindi to english 
+
+
+Preprocessing: 
+For preprocessing part I have followed from  google's seq-2-seq attention mechanism.
+
+Problem: They have remove all punctuations except ".", "?", "!", "," the problem is with words like he's which now becomes [he, s]
+when split. 
+
+A quick fix would be to change the regex from r"[^a-zA-Z?.!,¿]+" to r"[^a-zA-Z?.!,\'¿]+", by doing this he's , it's will be considered 
+as a single word.
+
+Another way is doing contraction correction where will relace it's to it is or he's to he is 
+
+
+
+done ........
+
+Training Custom Models 
+
+<image of the constants.py file> done 
+
+<image of terminal>
+
+<image of gui> done
+
+
+done..........
+
+
+Model Architectures: Encoder/ Decoder 
+<encoder image>
+
+
+<decoder image>
+
+
+
+Attention Mechanisms 
+Experiments on different Attention Mechanisms trained on only 30000 samples
+
+	
+Attention	  Accuracy Bleu-1 	 Loss      Time 
+
+1 .  Simple Attention           64%              0.009      270s 
+2.   Attention With Context     66%              0.006      300s
+3.   Additive Attention 	70%              0.003      300s 
+
+
+Live  a Message 
+
+
+Attention Plots of Different Mechanimsm
+
+
+Experiment is changing the Units, done 
+
+
+Experiment in changing the no. of Layers - layer 
+
+
+
+
+Things to do:
+1. Need to implement a smarter way of preprocessing the data. 
+2. Create a flask app (streamlit has limited functionality)
+3. Implement Transformer Architecture from scratch
+

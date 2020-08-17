@@ -1,0 +1,11 @@
+EPOCHS = 100
+PATH = "data/spa.txt"
+SENT_LIMIT = 300
+BATCH_SIZE = 32
+EMBEDDING_DIM = 128
+UNITS = 1024
+ENCODER_SAVE_PATH = "models/encoder_spa"
+DECODER_SAVE_PATH = "models/decoder_spa"
+PREPROCESS_INPUT = True
+PREPROCESS_TARGET = True
+
